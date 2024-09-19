@@ -2,15 +2,16 @@ import React from 'react'
 import './Sidebar.css'
 import { Nav } from 'react-bootstrap'
 import SidebarPag from '../sidebarPage/SidebarPage'
-import { FaPhotoVideo, FaHome } from "react-icons/fa";
+import { FaHome, FaMusic } from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
+import { GiPopcorn } from "react-icons/gi";
 
 
 export default function Sidebar() {
 
-    const pagesRoutes = ["/", "/favorite/:user", "/video/:url"]
-    const pagesText = ["Home", "My List", "Video"]
-    const pagesIcon = [FaPhotoVideo, MdFavorite, FaHome]
+    const pagesRoutes = ["/", "/series", "/audios", "/favorite/:user"]
+    const pagesText = ["Home", "Series", "Music", "My List",]
+    const pagesIcon = [FaHome, GiPopcorn, FaMusic, MdFavorite]
 
     return (
         <div className="sidebar">

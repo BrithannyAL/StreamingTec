@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "serverAudio": "nodemon serverAudio.js",
+    "serverSerie": "nodemon serverSerie.js",
+    "serverVideo": "nodemon serverVideo.js"
   },
   "keywords": [],
   "author": "",

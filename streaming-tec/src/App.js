@@ -1,9 +1,9 @@
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Layout from "./components/layout/Layout";
-import Video from "./pages/video/Video";
-import Home from "./pages/home/Home";
+import Layout from "./frontend/components/layout/Layout";
+import Video from "./frontend/pages/video/Video";
+import Home from "./frontend/pages/home/Home";
 import FavoriteList from "./pages/favorite/FavoriteList";
 
 export default function App() {

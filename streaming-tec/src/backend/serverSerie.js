@@ -9,7 +9,7 @@ const storage = new Storage({
     keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
 });
 
-const bucketName = 'streamingtec-video';
+const bucketName = 'streamingtec-series';
 const bucket = storage.bucket(bucketName);
 
 app.use(cors());

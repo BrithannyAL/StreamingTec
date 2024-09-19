@@ -3,7 +3,8 @@ import ItemList from '../itemList/ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SearchBar.css';
 
-export default function SearchBar() {
+export default function SearchBar({ section }) {
+
     const [searchText, setSearchText] = React.useState("");
     const [items, setItems] = React.useState([]);
 
@@ -13,8 +14,16 @@ export default function SearchBar() {
     }
 
     const handleSearchClick = () => {
-        console.log("Buscar")
-        fetch(`http://localhost:5000/search/${searchText}`)
+        let port;
+        if (section === "series") {
+            port = 5001;
+        } else if (section === "audios") {
+            port = 5002;
+        } else {
+            port = 5000;
+        }
+
+        fetch(`http://localhost:${port}/search/${searchText}`)
             .then(response => response.json())
             .then(data => {
                 setItems(data);

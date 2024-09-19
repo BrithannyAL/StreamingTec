@@ -9,7 +9,7 @@ const storage = new Storage({
     keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
 });
 
-const bucketName = 'streamingtec-video';
+const bucketName = 'streamingtec-audios';
 const bucket = storage.bucket(bucketName);
 
 app.use(cors());
@@ -40,7 +40,7 @@ app.get('/search/:query', async (req, res) => {
     }
 })
 
-app.listen(5003, () => {
-    console.log('Server is running on http://localhost:5003');
+app.listen(5002, () => {
+    console.log('Server is running on http://localhost:5002');
     }
 );

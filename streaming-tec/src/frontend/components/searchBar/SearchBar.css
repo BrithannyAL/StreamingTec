@@ -1,0 +1,40 @@
+.search-bar-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #1f2226;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.form-control {
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+}
+
+.btn-primary {
+    border-radius: 0 4px 4px 0;
+    margin-left: 60px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.item-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.item:last-child {
+    border-bottom: none;
+}

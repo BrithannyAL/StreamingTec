@@ -1,0 +1,12 @@
+.layout {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    overflow-y: auto;
+    box-sizing: border-box;
+}

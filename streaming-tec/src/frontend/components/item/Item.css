@@ -1,0 +1,22 @@
+.item {
+    margin-bottom: 3px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.item .title:hover {
+    color: #1f2226;
+}
+
+.title {
+    font-size: 1.2rem;
+    color: #f9f9f9;
+    margin: 0;
+}

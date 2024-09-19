@@ -1,0 +1,29 @@
+.container {
+    background-color: #1f2226;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* el alto de toda la pagina */
+    min-height: 100vh;
+}
+
+.container h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 30px;
+}
+
+.player-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-color: #1f2226;
+    padding: 20px;
+}
+
+.react-player {
+    border-radius: 8px;
+    overflow: hidden;
+}

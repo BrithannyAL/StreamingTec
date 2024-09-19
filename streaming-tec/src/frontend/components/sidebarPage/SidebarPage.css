@@ -1,0 +1,27 @@
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #f0f2f5;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.nav-link:hover {
+  background-color: #f0f2f5;
+  color: #343a40;
+  text-decoration: none;
+}
+
+.sidebar-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  /* transition: transform 0.3s ease; */
+}
+
+.nav-link:hover .sidebar-icon {
+  transform: scale(1.2);
+}

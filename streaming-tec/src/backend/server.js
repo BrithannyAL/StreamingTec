@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
 
 require('dotenv').config();
@@ -11,15 +12,16 @@ const storage = new Storage({
 const bucketName = 'streamingtec-video';
 const bucket = storage.bucket(bucketName);
 
+app.use(cors());
+
 app.get('/search/:query', async (req, res) => {
     const query = req.params.query;
+    console.log(query)
     try {
         const [files] = await bucket.getFiles({
             prefix: query,
         });
-
-        console.log("ARCHIVOS", files)
-
+        
         if (files.length === 0) {
             return res.status(404).send('No se encontraron archivos');
         }

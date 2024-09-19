@@ -9,10 +9,12 @@ export default function SearchBar() {
 
     const handleInputChange = (event) => {
         setSearchText(event.target.value);
+        console.log("Escribiendo")
     }
 
     const handleSearchClick = () => {
-        fetch(`/search/${searchText}`)
+        console.log("Buscar")
+        fetch(`http://localhost:5000/search/${searchText}`)
             .then(response => response.json())
             .then(data => {
                 setItems(data);
@@ -20,6 +22,7 @@ export default function SearchBar() {
             .catch(error => {
                 console.error("Error al buscar videos: ", error);
             });
+        console.log(items)
     };
 
     return (

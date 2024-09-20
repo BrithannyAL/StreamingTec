@@ -8,7 +8,7 @@ export default function Layout() {
         <div className='layout'>
             <Sidebar />
             <main style={{backgroundColor: '#1f2226'}} className='content'>
-                <Outlet />
+                <Outlet/>
             </main>
         </div>
     )

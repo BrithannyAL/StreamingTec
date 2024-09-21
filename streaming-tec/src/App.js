@@ -52,6 +52,9 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path=":section" element={<Home />} />
 
+          <Route path="favorite/:user" element={<FavoriteList />} />
+          <Route path="video/:url" element={<Video />} />
+
           {/* Ruta protegida para favoritos */}
           <Route
             path="favorite/:user"

@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors')
 const app = express();
+const {saveDataAudio} = require('./fireBase/SaveDataBucket');
 
 require('dotenv').config();
 const { Storage } = require('@google-cloud/storage');
@@ -14,6 +15,7 @@ const bucket = storage.bucket(bucketName);
 
 app.use(cors());
 
+//Para hacer busquedas segun el nombre del audio desde la barra de busqueda en la interfaz
 app.get('/search/:query', async (req, res) => {
     const query = req.params.query;
     console.log(query)
@@ -39,6 +41,24 @@ app.get('/search/:query', async (req, res) => {
         console.log("Error al encontrar el archivo: ", error);
     }
 })
+
+//Obtener todo los datos del audio y enviarlos a firebase
+async function getDataAudio() {
+    const [files]=await storage.bucket(bucketName).getFiles();
+    const data= files.map(file=>{
+        return{
+            nombre:file.name,
+            url:`https://storage.googleapis.com/${bucketName}/${file.name}`
+        };
+    });
+    return data
+}
+
+async function getProcessAudio(){
+    const saveData = await getDataAudio();
+    await saveDataAudio(saveData);
+}
+getProcessAudio();
 
 app.listen(5002, () => {
     console.log('Server is running on http://localhost:5002');

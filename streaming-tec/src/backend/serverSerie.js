@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors')
 const app = express();
+const {saveDataSerie} = require('./fireBase/SaveDataBucket');
 
 require('dotenv').config();
 const { Storage } = require('@google-cloud/storage');
@@ -39,6 +40,46 @@ app.get('/search/:query', async (req, res) => {
         console.log("Error al encontrar el archivo: ", error);
     }
 })
+
+// Obtener todos los datos de las series y enviarlos a Firebase
+async function getDataSeries() {
+    const [files] = await storage.bucket(bucketName).getFiles();
+    
+    const data = [];
+
+    files.forEach(file => {
+        // Separar el nombre de la carpeta y el nombre del archivo
+        const pathParts = file.name.split('/');
+        
+        //"nombreCarpeta/nombreVideo"
+        const nombreCarpeta = pathParts[0];
+        const nombreVideo = pathParts[1];
+        
+        // Buscar si ya existe la carpeta en el array
+        let carpeta = data.find(item => item.nombreCarpeta === nombreCarpeta);
+        
+        // Si no existe, crear una nueva entrada
+        if (!carpeta) {
+            carpeta = { nombreCarpeta, videos: [] };
+            data.push(carpeta);
+        }
+        
+        // Agregar el video y su URL a la carpeta correspondiente
+        carpeta.videos.push({
+            nombre: nombreVideo,
+            url: `https://storage.googleapis.com/${bucketName}/${file.name}`
+        });
+    });
+    
+    return data;
+}
+
+async function getProcessSeries() {
+    const saveData = await getDataSeries();
+    await saveDataSerie(saveData);
+}
+getProcessSeries();
+
 
 app.listen(5001, () => {
     console.log('Server is running on http://localhost:5001');

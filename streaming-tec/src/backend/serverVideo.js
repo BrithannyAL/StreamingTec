@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors')
 const app = express();
+const {saveDataVideo} = require('./fireBase/SaveDataBucket');
 
 require('dotenv').config();
 const { Storage } = require('@google-cloud/storage');
@@ -39,6 +40,24 @@ app.get('/search/:query', async (req, res) => {
         console.log("Error al encontrar el archivo: ", error);
     }
 })
+
+//Obtener todo los datos de los videos y enviarlos a firebase
+async function getDataVideo() {
+    const [files]=await storage.bucket(bucketName).getFiles();
+    const data= files.map(file=>{
+        return{
+            nombre:file.name,
+            url:`https://storage.googleapis.com/${bucketName}/${file.name}`
+        };
+    });
+    return data
+}
+
+async function getProcessVideo(){
+    const saveData = await getDataVideo();
+    await saveDataVideo(saveData);
+}
+getProcessVideo();
 
 app.listen(5000, () => {
     console.log('Server is running on http://localhost:5000');

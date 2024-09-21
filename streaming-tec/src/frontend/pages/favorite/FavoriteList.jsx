@@ -13,15 +13,15 @@ export default function FavoriteList() {
     ];
 
     return (
-        <div style={{width: '100%', height: '100hv'}} className="container">
-            <h1>Mis favoritos</h1>
-            <div className="row">
-                <div className="col-md-6">
-                    <h2 style={{color: 'white'}}>Videos</h2>
+        <div className="container d-flex flex-column align-items-center" style={{ minHeight: '100vh' }}>
+            <h1 className="my-4">Mis favoritos</h1>
+            <div className="row w-100">
+                <div className="col-md-6 d-flex flex-column align-items-center">
+                    <h2 style={{ color: 'white' }}>Videos</h2>
                     <CardList items={videoItems} />
                 </div>
-                <div className="col-md-6">
-                    <h2 style={{color: 'white'}}>Audios</h2>
+                <div className="col-md-6 d-flex flex-column align-items-center">
+                    <h2 style={{ color: 'white' }}>Audios</h2>
                     <CardList items={songItems} />
                 </div>
             </div>

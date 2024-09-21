@@ -41,6 +41,34 @@ app.get('/search/:query', async (req, res) => {
     }
 })
 
+// Obtener 9 videos de series aleatorias
+app.get('/random-series', async (req, res) => {
+    try {
+        const [files] = await bucket.getFiles();
+        
+        if (files.length === 0) {
+            return res.status(404).send('No se encontraron archivos');
+        }
+
+        // Seleccionar 9 videos de series aleatorias
+        const shuffled = files.sort(() => 0.5 - Math.random());
+        const selectedFiles = shuffled.slice(0, 9);
+
+        const results = selectedFiles.map(file => {
+            return {
+                title: file.name,
+                url: `https://storage.googleapis.com/${bucketName}/${file.name}`
+            }
+        });
+
+        res.send(results);
+
+    } catch (error) {
+        console.log("Error al obtener canciones aleatorias: ", error);
+        res.status(500).send('Error al obtener canciones aleatorias');
+    }
+});
+
 // Obtener todos los datos de las series y enviarlos a Firebase
 async function getDataSeries() {
     const [files] = await storage.bucket(bucketName).getFiles();

@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SearchBar from "../../components/searchBar/SearchBar";
 import Card from "../../components/card/Card";
 import "./Home.css";
 import { useParams } from "react-router-dom";
-import { FaPage4 } from "react-icons/fa";
 
 export default function Home() {
     const [placeholder, setPlaceholder] = React.useState("Buscar videos...");
     const [title, setTitle] = React.useState("Bienvenido a Streaming-TEC");
     const [items, setItems] = React.useState([]);
+    const [type, setType] = React.useState("video");
     const { section } = useParams();
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (section === "series") {
             setPlaceholder("Buscar series...");
             setTitle("");
@@ -20,6 +20,7 @@ export default function Home() {
             setPlaceholder("Buscar audios...");
             setTitle("");
             fetchRandomSongs()
+            setType("audio");
         } else {
             fetchRandomVideos();
         }
@@ -64,7 +65,7 @@ export default function Home() {
                     <div className="row">
                         {items.map((item, index) => (
                             <div className="col-md-4 mb-4" key={index}>
-                                <Card type={item.type} title={item.title} />
+                                <Card type={type} title={item.title} urlVideo={item.url} />
                             </div>
                         ))}
                     </div>

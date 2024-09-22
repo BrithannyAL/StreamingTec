@@ -2,6 +2,7 @@ import { FaVideo, FaMusic, FaHeart } from 'react-icons/fa';
 import imgPrueba from '../../images/imgPrueba.jpg';
 import './Card.css';
 import { useNavigate } from 'react-router-dom';
+const {SaveFavorite} = require('../../../backend/fireBase/SaveGetFavorite');
 
 export default function Card({ type, title, urlVideo }) {
   const icon = type === 'video' ? <FaVideo /> : <FaMusic />;
@@ -10,6 +11,17 @@ export default function Card({ type, title, urlVideo }) {
   const handleClick = () => {
     const encodedUrl = encodeURIComponent(urlVideo);
     navigate(`/video/${encodedUrl}`);
+    console.log(urlVideo)
+  }
+
+  const handleClickFavorite = async (event) => {
+    // Evitar que se active el click en la tarjeta
+    event.stopPropagation();
+    try {
+      await SaveFavorite(title, urlVideo);
+    } catch (error) {
+      alert('Error al guardar en favoritos');
+    }
   }
 
   return (
@@ -20,7 +32,7 @@ export default function Card({ type, title, urlVideo }) {
           <span className="me-3">{icon}</span>
           <span>{title}</span>
         </div>
-        <FaHeart className="text-danger" />
+        <FaHeart className="text-danger" onClick={handleClickFavorite} style={{ cursor: 'pointer' }}/>
       </div>
     </div>
   );

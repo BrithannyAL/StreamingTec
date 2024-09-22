@@ -16,12 +16,16 @@ export default function FavoriteList() {
         <div className="container d-flex flex-column align-items-center" style={{ minHeight: '100vh' }}>
             <h1 className="my-4">Mis favoritos</h1>
             <div className="row w-100">
-                <div className="col-md-6 d-flex flex-column align-items-center">
+                <div className="col-md-4 d-flex flex-column align-items-center">
                     <h2 style={{ color: 'white' }}>Videos</h2>
                     <CardList items={videoItems} />
                 </div>
-                <div className="col-md-6 d-flex flex-column align-items-center">
+                <div className="col-md-4 d-flex flex-column align-items-center">
                     <h2 style={{ color: 'white' }}>Audios</h2>
+                    <CardList items={songItems} />
+                </div>
+                <div className="col-md-4 d-flex flex-column align-items-center">
+                    <h2 style={{ color: 'white' }}>Series</h2>
                     <CardList items={songItems} />
                 </div>
             </div>

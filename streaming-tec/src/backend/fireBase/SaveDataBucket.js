@@ -81,4 +81,4 @@ async function saveDataSerie(data){
     }
 }
 
-module.exports = { saveDataAudio, saveDataVideo, saveDataSerie};
+module.exports = { saveDataAudio, saveDataVideo, saveDataSerie,validarAudio,validarVideo};

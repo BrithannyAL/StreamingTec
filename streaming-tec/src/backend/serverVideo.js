@@ -5,7 +5,6 @@ const {saveDataVideo} = require('./fireBase/SaveDataBucket');
 const {collection, getDocs, where,query} = require('firebase/firestore');
 const {db}=require('./fireBase/fireBaseCredenciales/CredencialesServeFire');
 
-
 require('dotenv').config();
 const { Storage } = require('@google-cloud/storage');
 const storage = new Storage({

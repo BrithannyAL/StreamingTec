@@ -51,7 +51,7 @@ async function getDataAudio() {
     const [files]=await storage.bucket(bucketName).getFiles();
     const data= files.map(file=>{
         return{
-            title:file.name,
+            nombre:file.name,
             url:`https://storage.googleapis.com/${bucketName}/${file.name}`
         };
     });

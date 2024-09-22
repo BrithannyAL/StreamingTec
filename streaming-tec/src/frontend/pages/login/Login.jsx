@@ -61,14 +61,14 @@ const Login = () => {
     return (
         <div className="d-flex justify-content-center align-items-center vh-100" style={{ backgroundColor: '#16181E' }}>
             <div className="row container" style={{ maxWidth: '800px', backgroundColor: '#16181E' }}>
-                <div className="col-md-5 d-flex justify-content-center align-items-center">
-                    <div style={{ width: '100%', maxWidth: '600px' }}>
-                        <img src={logo} alt="Logo" className="img-fluid" style={{ objectFit: 'contain' }} />
+                <div className="col-md-5 d-flex justify-content-center align-items-center" style={{width:'50%'}}>
+                    <div style={{marginTop:'75px'}}>
+                        <img src={logo} alt="Logo" className="img-fluid" style={{ objectFit: 'contain', width: '100%', maxWidth: '600px', marginRight: '390px'}}/>
                     </div>
                 </div>
                 <div className="col-md-6 d-flex flex-column justify-content-center">
                     <h1 className="text-white mb-4">{registro ? 'Registrarse' : 'Iniciar Sesión'}</h1>
-                    <form onSubmit={handlerSubmit}>
+                    <form onSubmit={handlerSubmit} >
                         {registro && (
                             <div className="mb-3">
                                 <label className="form-label text-white">Nombre:</label>
@@ -88,7 +88,7 @@ const Login = () => {
                         </button>
                     </form>
                     <div className='form-group'>
-                        <button className='btn btn-secondary mt-2 form-control' onClick={() => setRegistro(!registro)}>
+                        <button className='btn btn-secondary w-100 mt-3' onClick={() => setRegistro(!registro)}>
                             {registro ? '¿Ya tienes una cuenta? Inicia Sesión' : 'Registrarse'}
                         </button>
                     </div>

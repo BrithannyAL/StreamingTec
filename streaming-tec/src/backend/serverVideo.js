@@ -33,7 +33,7 @@ app.get('/search/:query', async (req, res) => {
                 url: `https://storage.googleapis.com/${bucketName}/${file.name}`
             }
         });
-
+        console.log(results)
         res.send(results);
 
     } catch (error) {

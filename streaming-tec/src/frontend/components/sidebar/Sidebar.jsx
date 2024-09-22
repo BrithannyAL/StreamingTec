@@ -2,10 +2,10 @@ import React from 'react'
 import './Sidebar.css'
 import { Nav } from 'react-bootstrap'
 import SidebarPag from '../sidebarPage/SidebarPage'
-import { FaHome, FaMusic } from "react-icons/fa";
+import { FaHome, FaMusic, FaSignOutAlt} from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
 import { GiPopcorn } from "react-icons/gi";
-
+import {signOut} from "../../../backend/fireBase/ConsultLogin";
 
 export default function Sidebar() {
 
@@ -25,6 +25,10 @@ export default function Sidebar() {
                         navLinkText={pagesText[index]} />
                 ))}
             </Nav>
+            <div className="signout" onClick={signOut}>
+                <FaSignOutAlt />
+                <span>Sign Out</span>
+            </div>
         </div>
     );
 }

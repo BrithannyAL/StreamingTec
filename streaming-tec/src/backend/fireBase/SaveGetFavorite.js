@@ -34,7 +34,7 @@ async function SaveFavorite(nombre, url) {
             const uid = user.uid; 
             const userDocRef = doc(db, 'favorite', uid); 
 
-            // Ejecutar las validaciones de manera concurrente
+            // Concurrente
             const [video, serie, audio] = await Promise.all([
                 validarVideo(nombre),
                 validarSerie(nombre),
@@ -102,4 +102,33 @@ async function SaveFavorite(nombre, url) {
     });
 }
 
-module.exports = {SaveFavorite};
+async function getFavorite() {
+    const auth = getAuth();
+
+    return new Promise((resolve, reject) => {
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const uid = user.uid; 
+                const userDocRef = doc(db, 'favorite', uid); 
+
+                try {
+                    const userDocSnap = await getDoc(userDocRef);
+                    if (userDocSnap.exists()) {
+                        // Devuelve la lista de favoritos
+                        resolve(userDocSnap.data().miLista);
+                    } else {
+                        // El usuario no tiene favoritos
+                        resolve([]);
+                    }
+                } catch (error) {
+                    console.error("Error al obtener los favoritos:", error);
+                    reject(error);
+                }
+            } else {
+                reject("Usuario no autenticado.");
+            }
+        });
+    });
+}
+
+module.exports = {SaveFavorite,getFavorite};

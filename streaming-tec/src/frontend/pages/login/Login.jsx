@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { registerUser, loginUser } from '../../../backend/fireBase/ConsultLogin'; // Importar el servicio
 import Swal from 'sweetalert2';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import logo from '../../images/logo.jpg';
 
 const Login = () => {
@@ -23,13 +24,10 @@ const Login = () => {
 
         try {
             if (registro) {
-                // Registrar usuario
                 await registerUser(email, password, nombre);
                 mostrarAlerta('¡Registro exitoso!', 'success');
             } else {
-                // Iniciar sesión
                 await loginUser(email, password);
-                //mostrarAlerta('¡Inicio de sesión exitoso!', 'success');
             }
         } catch (error) {
             manejarError(error);
@@ -54,48 +52,46 @@ const Login = () => {
                 mostrarAlerta('No se encontró un usuario con este correo.', 'error');
                 break;
             default:
-                mostrarAlerta('Ocurrió un error. Inténtalo nuevamente.', 'error');
+                mostrarAlerta('Contraseña incorrecta, vuelva a ingresarla.', 'error');
         }
     };
 
     return (
         <div className="d-flex justify-content-center align-items-center vh-100" style={{ backgroundColor: '#16181E' }}>
-            <div className="row container" style={{ maxWidth: '800px', backgroundColor: '#16181E' }}>
-                <div className="col-md-5 d-flex justify-content-center align-items-center" style={{width:'50%'}}>
-                    <div style={{marginTop:'75px'}}>
-                        <img src={logo} alt="Logo" className="img-fluid" style={{ objectFit: 'contain', width: '100%', maxWidth: '600px', marginRight: '390px'}}/>
-                    </div>
-                </div>
-                <div className="col-md-6 d-flex flex-column justify-content-center">
-                    <h1 className="text-white mb-4">{registro ? 'Registrarse' : 'Iniciar Sesión'}</h1>
-                    <form onSubmit={handlerSubmit} >
-                        {registro && (
-                            <div className="mb-3">
-                                <label className="form-label text-white">Nombre:</label>
-                                <input type="text" className="form-control" placeholder="Ingrese su nombre" id="nombre" required />
-                            </div>
-                        )}
-                        <div className="mb-3">
-                            <label className="form-label text-white">Correo Electrónico:</label>
-                            <input type="email" className="form-control" placeholder="Ingrese su correo" id="email" required />
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label text-white">Contraseña:</label>
-                            <input type="password" className="form-control" placeholder="Ingrese su contraseña" id="password" required />
-                        </div>
-                        <button className="btn w-100 mt-3" type="submit" style={{ background: '#00B9AE', color: 'white' }}>
-                            {registro ? 'Registrarse' : 'Iniciar'}
-                        </button>
-                    </form>
-                    <div className='form-group'>
-                        <button className='btn btn-secondary w-100 mt-3' onClick={() => setRegistro(!registro)}>
+            <Container fluid className="p-5" style={{ maxWidth: '800px', backgroundColor: '#16181E' }}>
+                <Row className="align-items-center">
+                    <Col md={5} className="d-flex justify-content-end align-items-center">
+                        <img src={logo} alt="Logo" className="img-fluid" style={{ objectFit: 'contain', maxWidth: '140%' , height: 'auto', marginTop:'20%'}} />
+                    </Col>
+                    <Col md={6} className="d-flex flex-column justify-content-center">
+                        <h1 className="text-white mb-4 text-center">{registro ? 'Registrarse' : 'Iniciar Sesión'}</h1>
+                        <Form onSubmit={handlerSubmit}>
+                            {registro && (
+                                <Form.Group className="mb-3" controlId="nombre">
+                                    <Form.Label className="text-white">Nombre:</Form.Label>
+                                    <Form.Control type="text" placeholder="Ingrese su nombre" required />
+                                </Form.Group>
+                            )}
+                            <Form.Group className="mb-3" controlId="email">
+                                <Form.Label className="text-white">Correo Electrónico:</Form.Label>
+                                <Form.Control type="email" placeholder="Ingrese su correo" required />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="password">
+                                <Form.Label className="text-white">Contraseña:</Form.Label>
+                                <Form.Control type="password" placeholder="Ingrese su contraseña" required />
+                            </Form.Group>
+                            <Button type="submit" className="w-100 mt-3" style={{ margin: '0px',background: '#00B9AE', color: 'white', border: 'none' }} >
+                                {registro ? 'Registrarse' : 'Iniciar'}
+                            </Button>
+                        </Form>
+                        <Button variant="secondary" className="mt-2 w-100" onClick={() => setRegistro(!registro)}>
                             {registro ? '¿Ya tienes una cuenta? Inicia Sesión' : 'Registrarse'}
-                        </button>
-                    </div>
-                </div>
-            </div>
+                        </Button>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
-}
+};
 
 export default Login;

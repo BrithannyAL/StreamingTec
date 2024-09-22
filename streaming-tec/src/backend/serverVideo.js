@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors')
 const app = express();
 const {saveDataVideo} = require('./fireBase/SaveDataBucket');
+const {collection, getDocs, where,query} = require('firebase/firestore');
+const {db}=require('./fireBase/fireBaseCredenciales/CredencialesServeFire');
+
 
 require('dotenv').config();
 const { Storage } = require('@google-cloud/storage');
@@ -12,6 +15,7 @@ const storage = new Storage({
 
 const bucketName = 'streamingtec-video';
 const bucket = storage.bucket(bucketName);
+
 
 app.use(cors());
 
@@ -64,8 +68,8 @@ app.get('/random-videos', async (req, res) => {
         res.send(results);
 
     } catch (error) {
-        console.log("Error al obtener canciones aleatorias: ", error);
-        res.status(500).send('Error al obtener canciones aleatorias');
+        console.log("Error al obtener videos aleatorios: ", error);
+        res.status(500).send('Error al obtener videos aleatorios');
     }
 });
 
@@ -86,6 +90,35 @@ async function getProcessVideo(){
     await saveDataVideo(saveData);
 }
 getProcessVideo();
+
+
+//Consulta a Firabase
+app.get('/search/:query', async (req, res) => {
+    const searchQuery  = req.params.query;
+
+    console.log("SE ESTA BUSCANDO  = "+ searchQuery);
+    try {
+        const q =  query(collection(db, "streamingtec-video"), where('nombre', '>=', searchQuery), where('nombre', '<=', searchQuery + '\uf8ff'));
+        const snapshot = await getDocs(q)
+        if (snapshot.empty) {
+            return res.status(404).send('No se encontraron archivos');
+        }
+
+        const results = snapshot.docs.map(doc => {
+            const data = doc.data();
+            return {
+                title: data.nombre,
+                url: data.url
+            };
+        });
+        
+        res.send(results);
+
+    } catch (error) {
+        console.log("Error al consultar Firebase: ", error);
+        res.status(500).send('Error al consultar Firebase');
+    }
+});
 
 app.listen(5000, () => {
     console.log('Server is running on http://localhost:5000');

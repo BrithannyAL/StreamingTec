@@ -37,11 +37,11 @@ export default function Home() {
 
     const fetchRandomSeriesVideos = async () => {
         try {
-            const response = await fetch('http://localhost:5001/random-songs');
+            const response = await fetch('http://localhost:5001/random-series');
             const data = await response.json();
             setItems(data);
         } catch (error) {
-            console.error("Error al obtener canciones aleatorias: ", error);
+            console.error("Error al obtener videos de series aleatorias: ", error);
         }
     };
 

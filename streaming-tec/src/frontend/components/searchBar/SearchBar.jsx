@@ -3,7 +3,7 @@ import ItemList from '../itemList/ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SearchBar.css';
 
-export default function SearchBar({ section }) {
+export default function SearchBar({ placeholder, section }) {
 
     const [searchText, setSearchText] = React.useState("");
     const [items, setItems] = React.useState([]);
@@ -40,7 +40,7 @@ export default function SearchBar({ section }) {
                 <input
                     type="text"
                     className="form-control"
-                    placeholder="Buscar video"
+                    placeholder={placeholder}
                     value={searchText}
                     onChange={handleInputChange}
                 />

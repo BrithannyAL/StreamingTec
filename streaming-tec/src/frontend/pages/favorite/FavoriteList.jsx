@@ -1,7 +1,7 @@
 import React , { useEffect, useState } from 'react';
 import CardList from '../../components/cardList/CardList';
 const {getFavorite} = require  ("../../../backend/fireBase/SaveGetFavorite")
-
+//Ruta correcta por si da error(volver a colocarla): const {getFavorite} = require  ("../../../backend/fireBase/SaveGetFavorite")
 export default function FavoriteList() {
     const [videoItems, setVideoItems] = useState([]);
     const [songItems, setSongItems] = useState([]);

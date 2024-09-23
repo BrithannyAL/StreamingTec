@@ -18,12 +18,11 @@ export default function FavoriteList() {
                 // Divide los favoritos según la sección
                 favorites.forEach(item => {
                     if (item.seccion === 'videos') {
-                        videos.push({ type: 'video', title: item.nombreVideo, urlVideo:item.url});
-                        
+                        videos.push({ type: 'video', title: item.nombreVideo, urlVideo: item.url }); // Asegúrate de pasar el urlVideo
                     } else if (item.seccion === 'audios') {
-                        audios.push({ type: 'song', title: item.nombreVideo });
+                        audios.push({ type: 'audio', title: item.nombreVideo, urlVideo: item.url }); // Si corresponde a audios
                     } else if (item.seccion === 'series') {
-                        series.push({ type: 'video', title: item.nombreVideo });
+                        series.push({ type: 'video', title: item.nombreVideo, urlVideo: item.url }); // Para las series
                     }
                 });
 

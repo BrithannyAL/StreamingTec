@@ -5,21 +5,20 @@ import { useNavigate } from 'react-router-dom';
 const {SaveFavorite} = require('../../../backend/fireBase/SaveGetFavorite'); 
 //Ruta correcta por si da error(volver a colocarla): const {SaveFavorite} = require('../../../backend/fireBase/SaveGetFavorite'); 
 
-export default function Card({ type, title, urlVideo }) {
+export default function Card({ type, title, url }) {
   const icon = type === 'video' ? <FaVideo /> : <FaMusic />;
   const navigate = useNavigate();
 
   const handleClick = () => {
-    const encodedUrl = encodeURIComponent(urlVideo);
-    navigate(`/video/${encodedUrl}`);
-    console.log(urlVideo)
+    const encodedUrl = encodeURIComponent(url);
+    navigate(`/${type}/${title}/${encodedUrl}`);
   }
 
   const handleClickFavorite = async (event) => {
     // Evitar que se active el click en la tarjeta
     event.stopPropagation();
     try {
-      await SaveFavorite(title, urlVideo);
+      await SaveFavorite(title, url);
     } catch (error) {
       alert('Error al guardar en favoritos');
     }

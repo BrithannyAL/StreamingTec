@@ -7,6 +7,7 @@ import Video from "./frontend/pages/video/Video";
 import Home from "./frontend/pages/home/Home";
 import FavoriteList from "./frontend/pages/favorite/FavoriteList";
 import Login from "./frontend/pages/login/Login";
+import Audio from "./frontend/pages/audio/Audio";
 
 import Credenciales from './backend/fireBase/fireBaseCredenciales/Credenciales';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -53,7 +54,8 @@ export default function App() {
           <Route path=":section" element={<Home />} />
 
           <Route path="favorite/:user" element={<FavoriteList />} />
-          <Route path="video/:url" element={<Video />} />
+          <Route path="video/:title/:url" element={<Video />} />
+          <Route path="audio/:title/:url" element={<Audio />} />
 
           {/* Ruta protegida para favoritos */}
           <Route

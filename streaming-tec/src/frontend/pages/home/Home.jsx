@@ -65,7 +65,7 @@ export default function Home() {
                     <div className="row">
                         {items.map((item, index) => (
                             <div className="col-md-4 mb-4" key={index}>
-                                <Card type={type} title={item.title} urlVideo={item.url} />
+                                <Card type={type} title={item.title} url={item.url} />
                             </div>
                         ))}
                     </div>

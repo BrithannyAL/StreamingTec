@@ -13,6 +13,11 @@
     margin: 30px;
 }
 
+.container h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
 .player-wrapper {
     display: flex;
     justify-content: center;

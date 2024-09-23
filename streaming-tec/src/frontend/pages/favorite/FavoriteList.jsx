@@ -1,7 +1,7 @@
 import React , { useEffect, useState } from 'react';
 import CardList from '../../components/cardList/CardList';
 const {getFavorite} = require  ("../../../backend/fireBase/SaveGetFavorite")
-//Ruta correcta por si da error(volver a colocarla): const {getFavorite} = require  ("../../../backend/fireBase/SaveGetFavorite")
+
 export default function FavoriteList() {
     const [videoItems, setVideoItems] = useState([]);
     const [songItems, setSongItems] = useState([]);
@@ -15,18 +15,18 @@ export default function FavoriteList() {
                 const audios = [];
                 const series = [];
 
-                // Divide los favoritos según la sección
                 favorites.forEach(item => {
                     if (item.seccion === 'videos') {
-                        videos.push({ type: 'video', title: item.nombreVideo, urlVideo: item.url }); // Asegúrate de pasar el urlVideo
+                        videos.push({ type: 'video', title: item.nombreVideo, urlVideo: item.url });
                     } else if (item.seccion === 'audios') {
-                        audios.push({ type: 'audio', title: item.nombreVideo, urlVideo: item.url }); // Si corresponde a audios
+                        audios.push({ type: 'audio', title: item.nombreVideo, urlVideo: item.url }); 
                     } else if (item.seccion === 'series') {
-                        series.push({ type: 'video', title: item.nombreVideo, urlVideo: item.url }); // Para las series
+                        const partes = item.nombreVideo.split('/'); 
+                        const newNombre = partes[partes.length - 1];
+                        series.push({ type: 'video', title: newNombre, urlVideo: item.url }); 
                     }
-                });
+                }); 
 
-                // Actualiza el estado con los elementos divididos
                 setVideoItems(videos);
                 setSongItems(audios);
                 setSerieItems(series);

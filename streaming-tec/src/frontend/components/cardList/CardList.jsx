@@ -5,7 +5,7 @@ export default function CardList({ items }) {
     return (
         <div className="container">
             {items.map((item, index) => (
-                <Card key={index} type={item.type} title={item.title} urlVideo={item.urlVideo} />
+                <Card key={index} type={item.type} title={item.title} url={item.urlVideo} />
             ))}
         </div>
     );

@@ -40,10 +40,15 @@ export default function Home() {
         try {
             const response = await fetch('http://localhost:5001/random-series');
             const data = await response.json();
-            setItems(data);
+            const modifiedData = data.map(item => ({
+                ...item,
+                title: item.title.replace(/\//g, '-')
+            }));
+            setItems(modifiedData);
         } catch (error) {
             console.error("Error al obtener videos de series aleatorias: ", error);
         }
+        //AQUÍ SE LA FUNCIÓN PARA MODIFICAR LOS NOMBRES DE LAS SERIES
     };
 
     const fetchRandomVideos = async () => {

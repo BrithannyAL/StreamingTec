@@ -55,7 +55,11 @@ StreamingTEC es un sistema multimedia distribuido para la transmisión de conten
 Este proyecto fue construido con las siguientes tecnologías:
 
 * [![React][React.js]][React-url]
-
+* [![Node.js][Node.js]][Nodejs-url]
+* [![Firebase][Firebase]][Firebase-url]
+* [![Bootstrap][Bootstrap]][Bootstrap-url]
+* [![Amazon Lightsail][Lightsail]][Lightsail-url]
+* [![Google Cloud Storage][GCP]][GCP-url]
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
 
@@ -119,8 +123,12 @@ Si tienes una sugerencia para mejorar el proyecto, por favor sigue los siguiente
 5. Abre un Pull Request.
    
 ### Créditos
-* Node.js Documentation
-
+* [React Documentation](https://reactjs.org/docs/getting-started.html)
+* [Node.js Documentation](https://nodejs.org/en/docs/)
+* [Firebase Documentation](https://firebase.google.com/docs)
+* [Bootstrap Documentation](https://getbootstrap.com/docs/)
+* [Amazon Lightsail Documentation](https://aws.amazon.com/documentation/lightsail/)
+* [Google Cloud Storage Documentation](https://cloud.google.com/storage/docs)
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p> 
 
 <!-- AUTHORS -->
@@ -128,9 +136,9 @@ Si tienes una sugerencia para mejorar el proyecto, por favor sigue los siguiente
 
 Este proyecto fue desarrollado por:
 
-- **[Brithanny Arguello](https://github.com/usuario1)**
-- **[Katherine Amador](https://github.com/usuario2)** 
-- **[Karina Urbina](https://github.com/usuario3)** 
+- **[Brithanny Arguello Lara](https://github.com/BrithannyAL)**
+- **[Katherine Amador González](https://github.com/KatherineDAG)** 
+- **[Karina Urbina Alvarez](https://github.com/KariUA)**
 
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
@@ -139,3 +147,13 @@ Este proyecto fue desarrollado por:
 <!-- MARKDOWN LINKS & IMAGES -->
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
+[Node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+[Nodejs-url]: https://nodejs.org/
+[Firebase]: https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white
+[Firebase-url]: https://firebase.google.com/
+[Bootstrap]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com/
+[GCP]: https://img.shields.io/badge/Google%20Cloud%20Storage-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white
+[GCP-url]: https://cloud.google.com/storage
+[Lightsail]: https://img.shields.io/badge/Amazon%20Lightsail-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=FF9900
+[Lightsail-url]: https://aws.amazon.com/lightsail/

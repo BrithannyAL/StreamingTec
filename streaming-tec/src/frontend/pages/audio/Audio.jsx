@@ -10,6 +10,7 @@ export default function Audio() {
     const title = useParams().title;
     const decodedUrl = decodeURIComponent(url);
     const trackList = [{ url: decodedUrl, title: title, tags: [""] },];
+    console.log(trackList)
 
     return (
         <div className='container'>

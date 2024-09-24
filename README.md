@@ -5,11 +5,10 @@
 <!-- PROJECT HEADER -->
 <br />
 <div align="center">
- <!--  <a href="https://github.com/your_username/streamingtec">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/BrithannyAL/StreamingTec">
+    <img src="streaming-tec/src/frontend/images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
-  -->
-  
+
   <h3 align="center">StreamingTEC</h3>
 
   <p align="center">
@@ -55,13 +54,12 @@ StreamingTEC es un sistema multimedia distribuido para la transmisión de conten
 Este proyecto fue construido con las siguientes tecnologías:
 
 * [![React][React.js]][React-url]
-
-* [![Node.js][Node.js]][Node-url]
-
-* [![Google Cloud Storage][Google Cloud Storage]][Google Cloud Storage-url]
+* [![Node.js][Node.js]][Nodejs-url]
+* [![Firebase][Firebase]][Firebase-url]
+* [![Bootstrap][Bootstrap]][Bootstrap-url]
+* [![Google Cloud Storage][GCP]][GCP-url]
 * [![NGINX][NGINX]][NGINX-url]
 * [![AWS EC2][AWS EC2]][AWS EC2-url]
-
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
@@ -93,7 +91,7 @@ Antes de instalar el proyecto, asegúrate de tener lo siguiente instalado:
 ### Instalación
 1. Clona el repositorio:
  ```sh
- git clone https://github.com/KariUA/streamingtec.git
+ git clone https://github.com/BrithannyAL/StreamingTec
  ```
 2. Instala las dependencias del proyecto:
  ```sh
@@ -129,12 +127,14 @@ Si tienes una sugerencia para mejorar el proyecto, por favor sigue los siguiente
 5. Abre un Pull Request.
    
 ### Créditos
-* [React.js](https://reactjs.org/)
-* [Node.js](https://nodejs.org/en/)
-* [Google Cloud Storage](https://cloud.google.com/)
+* [React Documentation](https://reactjs.org/docs/getting-started.html)
+* [Node.js Documentation](https://nodejs.org/en/docs/)
+* [Firebase Documentation](https://firebase.google.com/docs)
+* [Bootstrap Documentation](https://getbootstrap.com/docs/)
+* [Amazon Lightsail Documentation](https://aws.amazon.com/documentation/lightsail/)
+* [Google Cloud Storage Documentation](https://cloud.google.com/storage/docs)
 * [NGINX](https://www.nginx.com/)
 * [AWS EC2](https://aws.amazon.com/)
-
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p> 
 
 <!-- AUTHORS -->
@@ -154,11 +154,18 @@ Este proyecto fue desarrollado por:
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
-[Node-url]: https://nodejs.org/en/
+[Nodejs-url]: https://nodejs.org/
+[Firebase]: https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white
+[Firebase-url]: https://firebase.google.com/
+[Bootstrap]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com/
+[GCP]: https://img.shields.io/badge/Google%20Cloud%20Storage-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white
+[GCP-url]: https://cloud.google.com/storage
 [Google Cloud Storage]: https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white
 [Google Cloud Storage-url]: https://cloud.google.com/
 [NGINX]: https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=nginx&logoColor=white
 [NGINX-url]: https://www.nginx.com/
 [AWS EC2]: https://img.shields.io/badge/Amazon%20AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white
 [AWS EC2-url]: https://aws.amazon.com/
+
 

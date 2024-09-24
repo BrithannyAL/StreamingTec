@@ -48,7 +48,6 @@ export default function Home() {
         } catch (error) {
             console.error("Error al obtener videos de series aleatorias: ", error);
         }
-        //AQUÍ SE LA FUNCIÓN PARA MODIFICAR LOS NOMBRES DE LAS SERIES
     };
 
     const fetchRandomVideos = async () => {

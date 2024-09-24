@@ -136,9 +136,9 @@ Si tienes una sugerencia para mejorar el proyecto, por favor sigue los siguiente
 
 Este proyecto fue desarrollado por:
 
-- **[Brithanny Arguello Lara](https://github.com/usuario1)**
-- **[Katherine Amador González](https://github.com/usuario2)** 
-- **[Karina Urbina Alvarez](https://github.com/usuario3)** 
+- **[Brithanny Arguello Lara](https://github.com/BrithannyAL)**
+- **[Katherine Amador González](https://github.com/KariUA)** 
+- **[Karina Urbina Alvarez](https://github.com/KatherineDAG)** 
 
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>

@@ -2,7 +2,7 @@ import React from "react";
 import "./ItemList.css";
 import Item from "../item/Item";
 
-function ItemList({ items }) {
+function ItemList({ items, type }) {
     if (items.length === 0) {
         return null //No renderizar nada
     }
@@ -11,7 +11,7 @@ function ItemList({ items }) {
         <div className="item-list">
             {items.length > 0 ? (
                 items.map((item, index) => (
-                    <Item key={index} item={item} />
+                    <Item key={index} item={item} type={type} />
                 ))
             ) : (
                 <></>

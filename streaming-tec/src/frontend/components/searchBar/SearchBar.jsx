@@ -7,6 +7,7 @@ export default function SearchBar({ placeholder, section }) {
 
     const [searchText, setSearchText] = React.useState("");
     const [items, setItems] = React.useState([]);
+    const [type, setType] = React.useState("video");
 
     const handleInputChange = (event) => {
         setSearchText(event.target.value);
@@ -19,6 +20,7 @@ export default function SearchBar({ placeholder, section }) {
             port = 5001;
         } else if (section === "audios") {
             port = 5002;
+            setType("audio");
         } else {
             port = 5000;
         }
@@ -48,7 +50,7 @@ export default function SearchBar({ placeholder, section }) {
                     Buscar
                 </button>
             </div>
-            <ItemList items={items} />
+            <ItemList items={items} type={type} />
         </div>
     );
 }

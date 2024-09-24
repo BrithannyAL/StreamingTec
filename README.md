@@ -5,11 +5,10 @@
 <!-- PROJECT HEADER -->
 <br />
 <div align="center">
- <!--  <a href="https://github.com/your_username/streamingtec">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/BrithannyAL/StreamingTec">
+    <img src="streaming-tec/src/frontend/images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
-  -->
-  
+
   <h3 align="center">StreamingTEC</h3>
 
   <p align="center">
@@ -27,9 +26,9 @@
 
 1. <a href="#about-the-project">Acerca del Proyecto</a>
 2. <a href="#built-with">Tecnologías Utilizadas</a>
-3. <a href="#getting-started">Instrucciones de Instalación</a>
-4. <a href="#usage">Guía de Uso</a>
-5. <a href="#api">Documentación de API</a>
+3. <a href="#system-architecture">Arquitectura del Sistema</a>
+4. <a href="#getting-started">Instrucciones de Instalación</a>
+5. <a href="#usage">Guía de Uso</a>
 6. <a href="#credits">Contribuciones y Créditos</a>
 7. <a href="#authors">Autoras</a>
 
@@ -42,7 +41,7 @@ StreamingTEC es un sistema multimedia distribuido para la transmisión de conten
 ### Características:
 * Soporte para múltiples plataformas.
 * Manejo eficiente de múltiples solicitudes simultáneas.
-* Balanceo de carga y escalabilidad horizontal.
+* Balanceo de carga y gestón de procesos.
 * Interfaces adaptativas para diferentes dispositivos.
 * Rendimiento optimizado para redes locales y la nube.
 
@@ -58,9 +57,26 @@ Este proyecto fue construido con las siguientes tecnologías:
 * [![Node.js][Node.js]][Nodejs-url]
 * [![Firebase][Firebase]][Firebase-url]
 * [![Bootstrap][Bootstrap]][Bootstrap-url]
-* [![Amazon Lightsail][Lightsail]][Lightsail-url]
 * [![Google Cloud Storage][GCP]][GCP-url]
+* [![NGINX][NGINX]][NGINX-url]
+* [![AWS EC2][AWS EC2]][AWS EC2-url]
+
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
+
+<!-- SYSTEM ARCHITECTURE -->
+## Arquitectura del Sistema
+
+La arquitectura de StreamingTEC está compuesta por los siguientes componentes:
+
+- **Frontend (React)**: La interfaz de usuario interactúa con el backend para solicitar el contenido multimedia.
+- **Servidores Backend (Node.js en AWS EC2 con PM2)**: Tres servidores (audios, videos, series) gestionan las solicitudes de contenido.
+- **NGINX (Balanceador de carga)**: Distribuye el tráfico de manera eficiente entre los servidores backend.
+- **Firebase**: Gestiona las direcciones URL de los archivos multimedia.
+- **Google Cloud Storage**: Almacena los archivos multimedia (videos, audios, series) a los que acceden los servidores backend.
+
+### Diagrama de Arquitectura
+
+![Diagrama de Arquitectura General](/streaming-tec/public/arquitectura.jpg)
 
 
 <!-- GETTING STARTED -->
@@ -75,7 +91,7 @@ Antes de instalar el proyecto, asegúrate de tener lo siguiente instalado:
 ### Instalación
 1. Clona el repositorio:
  ```sh
- git clone https://github.com/KariUA/streamingtec.git
+ git clone https://github.com/BrithannyAL/StreamingTec
  ```
 2. Instala las dependencias del proyecto:
  ```sh
@@ -98,18 +114,6 @@ Para usar StreamingTEC, sigue estos pasos:
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 
-<!-- API -->
-## Documentación de API
-La API de StreamingTEC permite gestionar el contenido multimedia, manejar usuarios y controlar las solicitudes de streaming.
-<!--
-Endpoints principales:
-GET /api/content: Devuelve una lista del contenido disponible.
-POST /api/upload: Sube un nuevo archivo multimedia.
-PUT /api/content/:id: Actualiza los metadatos de un archivo multimedia.
-DELETE /api/content/:id: Elimina un archivo multimedia.
--->
-<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
-
 <!-- CREDITS -->
 ## Contribuciones y Créditos
 Las contribuciones son lo que hacen que la comunidad de código abierto sea un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas es grandemente apreciada.
@@ -129,6 +133,8 @@ Si tienes una sugerencia para mejorar el proyecto, por favor sigue los siguiente
 * [Bootstrap Documentation](https://getbootstrap.com/docs/)
 * [Amazon Lightsail Documentation](https://aws.amazon.com/documentation/lightsail/)
 * [Google Cloud Storage Documentation](https://cloud.google.com/storage/docs)
+* [NGINX](https://www.nginx.com/)
+* [AWS EC2](https://aws.amazon.com/)
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p> 
 
 <!-- AUTHORS -->
@@ -155,5 +161,9 @@ Este proyecto fue desarrollado por:
 [Bootstrap-url]: https://getbootstrap.com/
 [GCP]: https://img.shields.io/badge/Google%20Cloud%20Storage-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white
 [GCP-url]: https://cloud.google.com/storage
-[Lightsail]: https://img.shields.io/badge/Amazon%20Lightsail-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=FF9900
-[Lightsail-url]: https://aws.amazon.com/lightsail/
+[Google Cloud Storage]: https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white
+[Google Cloud Storage-url]: https://cloud.google.com/
+[NGINX]: https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=nginx&logoColor=white
+[NGINX-url]: https://www.nginx.com/
+[AWS EC2]: https://img.shields.io/badge/Amazon%20AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white
+[AWS EC2-url]: https://aws.amazon.com/

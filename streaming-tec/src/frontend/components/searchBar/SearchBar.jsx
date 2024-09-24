@@ -13,8 +13,10 @@ export default function SearchBar({ placeholder, section }) {
         setSearchText(event.target.value);
         console.log("Escribiendo")
     }
+    
 
     const handleSearchClick = () => {
+        const ip = "http://44.214.42.196"
         let port;
         if (section === "series") {
             port = 5001;
@@ -25,7 +27,7 @@ export default function SearchBar({ placeholder, section }) {
             port = 5000;
         }
 
-        fetch(`http://localhost:${port}/search/${searchText}`)
+        fetch(`${ip}:${port}/search/${searchText}`)
             .then(response => response.json())
             .then(data => {
                 setItems(data);

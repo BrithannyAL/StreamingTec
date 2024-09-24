@@ -28,7 +28,7 @@ export default function Home() {
 
     const fetchRandomSongs = async () => {
         try {
-            const response = await fetch('http://localhost:5002/random-songs');
+            const response = await fetch('http://44.214.42.196:5002/random-songs');
             const data = await response.json();
             setItems(data);
         } catch (error) {
@@ -38,7 +38,7 @@ export default function Home() {
 
     const fetchRandomSeriesVideos = async () => {
         try {
-            const response = await fetch('http://localhost:5001/random-series');
+            const response = await fetch('http://44.214.42.196:5001/random-series');
             const data = await response.json();
             const modifiedData = data.map(item => ({
                 ...item,
@@ -52,7 +52,7 @@ export default function Home() {
 
     const fetchRandomVideos = async () => {
         try {
-            const response = await fetch('http://localhost:5000/random-videos');
+            const response = await fetch('http://44.214.42.196:5000/random-videos');
             const data = await response.json();
             setItems(data);
         } catch (error) {

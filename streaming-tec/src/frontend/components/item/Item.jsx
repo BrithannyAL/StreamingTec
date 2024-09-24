@@ -7,7 +7,7 @@ export default function Item({ item, type }) {
 
     const handleClick = () => {
         const encodedUrl = encodeURIComponent(item.url); // Encode URL
-        navigate(`/${type}/${encodedUrl}`);
+        navigate(`/${type}/${item.title}/${encodedUrl}`);
     }
 
     return (

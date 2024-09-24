@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>StreamingTEC</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="streamingtec">StreamingTEC</h1>
+<p><a id="readme-top"></a></p>
+<!-- PROJECT HEADER -->
+<br />
+<div align="center">
+ <!--  <a href="https://github.com/your_username/streamingtec">
+    <img src="file:///c:\Users\Karina\Desktop\Sistemas Operativos\Proyectos\StreamingTec\images\logo.png" alt="Logo" width="80" height="80">
+  </a>
+  -->
+  <h3 align="center">StreamingTEC</h3>
+  <p align="center">
+    Un sistema multimedia distribuido para streaming de contenido.
+    <br />
+    <a href="https://github.com/your_username/streamingtec"><strong>Explorar la documentación »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/your_username/streamingtec">Ver Demo</a>
+  </p>
+</div>
+<h2 id="tabla-de-contenidos">Tabla de Contenidos</h2>
+<ol>
+<li><a href="#about-the-project">Acerca del Proyecto</a></li>
+<li><a href="#built-with">Tecnologías Utilizadas</a></li>
+<li><a href="#system-architecture">Arquitectura del Sistema</a></li>
+<li><a href="#getting-started">Instrucciones de Instalación</a></li>
+<li><a href="#usage">Guía de Uso</a></li>
+<li><a href="#credits">Contribuciones y Créditos</a></li>
+<li><a href="#authors">Autoras</a></li>
+</ol>
+<!-- ABOUT THE PROJECT -->
+<h2 id="acerca-del-proyecto">Acerca del Proyecto</h2>
+<p>StreamingTEC es un sistema multimedia distribuido para la transmisión de contenido, diseñado para permitir a los usuarios acceder a vídeos y música desde múltiples plataformas. El sistema garantiza alta escalabilidad, balanceo de carga y alta disponibilidad, con rendimiento óptimo en diferentes configuraciones de red como la nube, redes locales y Edge Computing.</p>
+<h3 id="características">Características:</h3>
+<ul>
+<li>Soporte para múltiples plataformas.</li>
+<li>Manejo eficiente de múltiples solicitudes simultáneas.</li>
+<li>Balanceo de carga y gestón de procesos.</li>
+<li>Interfaces adaptativas para diferentes dispositivos.</li>
+<li>Rendimiento optimizado para redes locales y la nube.</li>
+</ul>
+<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
+<!-- BUILT WITH -->
+<h2 id="tecnologías-utilizadas">Tecnologías Utilizadas</h2>
+<p>Este proyecto fue construido con las siguientes tecnologías:</p>
+<ul>
+<li>
+<p><a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&amp;logo=react&amp;logoColor=61DAFB" alt="React"></a></p>
+</li>
+<li>
+<p><a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&amp;logo=node.js&amp;logoColor=white" alt="Node.js"></a></p>
+</li>
+<li>
+<p><a href="https://cloud.google.com/"><img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&amp;logo=google-cloud&amp;logoColor=white" alt="Google Cloud Storage"></a></p>
+</li>
+<li>
+<p><a href="https://www.nginx.com/"><img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&amp;logo=nginx&amp;logoColor=white" alt="NGINX"></a></p>
+</li>
+<li>
+<p><a href="https://aws.amazon.com/"><img src="https://img.shields.io/badge/Amazon%20AWS-232F3E?style=for-the-badge&amp;logo=amazon-aws&amp;logoColor=white" alt="AWS EC2"></a></p>
+</li>
+</ul>
+<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
+<!-- SYSTEM ARCHITECTURE -->
+<h2 id="arquitectura-del-sistema">Arquitectura del Sistema</h2>
+<p>La arquitectura de StreamingTEC está compuesta por los siguientes componentes:</p>
+<ul>
+<li><strong>Frontend (React)</strong>: La interfaz de usuario interactúa con el backend para solicitar el contenido multimedia.</li>
+<li><strong>Servidores Backend (Node.js en AWS EC2 con PM2)</strong>: Tres servidores (audios, videos, series) gestionan las solicitudes de contenido.</li>
+<li><strong>NGINX (Balanceador de carga)</strong>: Distribuye el tráfico de manera eficiente entre los servidores backend.</li>
+<li><strong>Firebase</strong>: Gestiona las direcciones URL de los archivos multimedia.</li>
+<li><strong>Google Cloud Storage</strong>: Almacena los archivos multimedia (videos, audios, series) a los que acceden los servidores backend.</li>
+</ul>
+<h3 id="diagrama-de-arquitectura">Diagrama de Arquitectura</h3>
+<p><img src="file:////streaming-tec/public/arquitectura.jpg" alt="Diagrama de Arquitectura General"></p>
+<!-- GETTING STARTED -->
+<h2 id="instrucciones-de-instalación">Instrucciones de Instalación</h2>
+<h3 id="prerrequisitos">Prerrequisitos</h3>
+<p>Antes de instalar el proyecto, asegúrate de tener lo siguiente instalado:</p>
+<ul>
+<li>Node.js v14.0 o superior</li>
+<li>npm v6.0 o superior</li>
+</ul>
+<h3 id="instalación">Instalación</h3>
+<ol>
+<li>Clona el repositorio:</li>
+</ol>
+<pre><code class="language-sh">git <span class="hljs-built_in">clone</span> https://github.com/KariUA/streamingtec.git
+</code></pre>
+<ol start="2">
+<li>Instala las dependencias del proyecto:</li>
+</ol>
+<pre><code class="language-sh">npm install
+</code></pre>
+<p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
+<!-- USAGE -->
+<h2 id="guía-de-uso">Guía de Uso</h2>
+<p>Para usar StreamingTEC, sigue estos pasos:</p>
+<ol>
+<li>Inicia el servidor con el siguiente comando:</li>
+</ol>
+<pre><code class="language-sh">npm start
+</code></pre>
+<ol start="2">
+<li>Accede a la aplicación a través de tu navegador en <a href="http://localhost:3000">http://localhost:3000</a>.</li>
+</ol>
+<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
+<!-- CREDITS -->
+<h2 id="contribuciones-y-créditos">Contribuciones y Créditos</h2>
+<p>Las contribuciones son lo que hacen que la comunidad de código abierto sea un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas es grandemente apreciada.</p>
+<p>Si tienes una sugerencia para mejorar el proyecto, por favor sigue los siguientes pasos:</p>
+<ol>
+<li>Haz un fork del proyecto.</li>
+<li>Crea tu rama de funcionalidad (git checkout -b feature/nueva-funcionalidad).</li>
+<li>Haz commit de los cambios (git commit -m 'Agregar nueva funcionalidad').</li>
+<li>Haz push a la rama (git push origin feature/nueva-funcionalidad).</li>
+<li>Abre un Pull Request.</li>
+</ol>
+<h3 id="créditos">Créditos</h3>
+<ul>
+<li><a href="https://reactjs.org/">React.js</a></li>
+<li><a href="https://nodejs.org/en/">Node.js</a></li>
+<li><a href="https://cloud.google.com/">Google Cloud Storage</a></li>
+<li><a href="https://www.nginx.com/">NGINX</a></li>
+<li><a href="https://aws.amazon.com/">AWS EC2</a></li>
+</ul>
+<p align="right">(<a href="#readme-top">volver arriba</a>)</p> 
+<!-- AUTHORS -->
+<h2 id="autoras">Autoras</h2>
+<p>Este proyecto fue desarrollado por:</p>
+<ul>
+<li><strong><a href="https://github.com/BrithannyAL">Brithanny Arguello</a></strong></li>
+<li><strong><a href="https://github.com/KatherineDAG">Katherine Amador</a></strong></li>
+<li><strong><a href="https://github.com/KariUA">Karina Urbina</a></strong></li>
+</ul>
+<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
+<!-- MARKDOWN LINKS & IMAGES -->
+
+            
+            
+        </body>
+        </html>

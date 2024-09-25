@@ -103,14 +103,41 @@ Antes de instalar el proyecto, asegúrate de tener lo siguiente instalado:
 
 <!-- USAGE -->
 ## Guía de Uso
-Para usar StreamingTEC, sigue estos pasos:
+A continuación se describen los pasos necesarios para clonar, configurar y ejecutar este proyecto de manera local.
 
-1. Inicia el servidor con el siguiente comando:
+### 1. Clonar el repositorio:
+Primero, es necesario clonar el repositorio desde GitHub utilizando el siguiente comando:
  ```sh
- npm start
+ git clone https://github.com/BrithannyAL/StreamingTec.git
  ```
+Esto descargará una copia local del código fuente del proyecto en su máquina.
 
-2. Accede a la aplicación a través de tu navegador en http://localhost:3000.
+### 2. Instalar las dependencias
+Una vez clonado el repositorio, será necesario instalar las dependencias requeridas por el proyecto tanto en el frontend (carpeta streaming-tec) como en el backend (carpeta backend). Para ello, siga los siguientes pasos:
+* Diríjase a la carpeta del frontend y ejecute el siguiente comando para instalar las dependencias de Node.js:
+```sh
+cd streaming-tec
+npm install
+```
+* Luego, instale las dependencias del backend dentro de la carpeta backend:
+```sh
+cd ../backend
+npm install
+```
+
+### 3. Iniciar la aplicación de React
+Una vez instaladas las dependencias, puede iniciar la aplicación de React en modo de desarrollo. Asegúrese de estar ubicado en el directorio streaming-tec y ejecute el siguiente comando:
+```sh
+cd ../streaming-tec
+npm start
+```
+Esto iniciará el servidor de desarrollo de React. Si la configuración es correcta, la aplicación debería abrir automáticamente en su navegador predeterminado en la dirección http://localhost:3000.
+
+### 4. Usar la plataforma
+Una vez que la aplicación esté corriendo, puede comenzar a interactuar con la plataforma y utilizar todas sus funcionalidades.
+
+Asegúrese de revisar la documentación adicional y los comandos disponibles en caso de necesitar realizar ajustes o configuraciones adicionales.
+
 
 <p align="right">(<a href="#readme-top">volver arriba</a>)</p>
 

@@ -9,7 +9,7 @@ import FavoriteList from "./pages/favorite/FavoriteList";
 import Login from "./pages/login/Login";
 import Audio from "./pages/audio/Audio";
 
-import Credenciales from './backend/fireBase/fireBaseCredenciales/Credenciales';
+import Credenciales from './fireBase/fireBaseCredenciales/Credenciales';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const auth = getAuth(Credenciales);

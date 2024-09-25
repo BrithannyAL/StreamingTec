@@ -1,6 +1,6 @@
 import React , { useEffect, useState } from 'react';
 import CardList from '../../components/cardList/CardList';
-const {getFavorite} = require  ("../../../backend/fireBase/SaveGetFavorite")
+const {getFavorite} = require  ("../../../fireBase/SaveGetFavorite")
 
 export default function FavoriteList() {
     const [videoItems, setVideoItems] = useState([]);

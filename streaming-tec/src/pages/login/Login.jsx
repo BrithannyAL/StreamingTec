@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { registerUser, loginUser } from '../../../backend/fireBase/ConsultLogin'; // Importar el servicio
+import { registerUser, loginUser } from '../../../fireBase/ConsultLogin'; // Importar el servicio
 import Swal from 'sweetalert2';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import logo from '../../images/logo.jpg';

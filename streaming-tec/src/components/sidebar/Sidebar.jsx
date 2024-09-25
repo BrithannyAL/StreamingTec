@@ -5,7 +5,7 @@ import SidebarPag from '../sidebarPage/SidebarPage'
 import { FaHome, FaMusic, FaSignOutAlt} from "react-icons/fa";
 import { MdFavorite } from "react-icons/md";
 import { GiPopcorn } from "react-icons/gi";
-import {signOut} from "../../../backend/fireBase/ConsultLogin";
+import {signOut} from "../../fireBase/ConsultLogin";
 
 export default function Sidebar() {
 

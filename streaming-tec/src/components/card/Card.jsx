@@ -2,7 +2,7 @@ import { FaVideo, FaMusic, FaHeart } from 'react-icons/fa';
 import imgPrueba from '../../images/imgPrueba.jpg';
 import './Card.css';
 import { useNavigate } from 'react-router-dom';
-const {SaveFavorite} = require('../../../fireBase/SaveGetFavorite'); 
+const {SaveFavorite} = require('../../fireBase/SaveGetFavorite'); 
 //Ruta correcta por si da error(volver a colocarla): const {SaveFavorite} = require('../../../backend/fireBase/SaveGetFavorite'); 
 
 export default function Card({ type, title, url }) {

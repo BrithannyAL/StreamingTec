@@ -2,12 +2,12 @@ import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, BrowserRouter as Router, Routes, Navigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-import Layout from "./frontend/components/layout/Layout";
-import Video from "./frontend/pages/video/Video";
-import Home from "./frontend/pages/home/Home";
-import FavoriteList from "./frontend/pages/favorite/FavoriteList";
-import Login from "./frontend/pages/login/Login";
-import Audio from "./frontend/pages/audio/Audio";
+import Layout from "./components/layout/Layout";
+import Video from "./pages/video/Video";
+import Home from "./pages/home/Home";
+import FavoriteList from "./pages/favorite/FavoriteList";
+import Login from "./pages/login/Login";
+import Audio from "./pages/audio/Audio";
 
 import Credenciales from './backend/fireBase/fireBaseCredenciales/Credenciales';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';

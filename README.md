@@ -13,11 +13,6 @@
 
   <p align="center">
     Un sistema multimedia distribuido para streaming de contenido.
-    <br />
-    <a href="https://github.com/your_username/streamingtec"><strong>Explorar la documentación »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/your_username/streamingtec">Ver Demo</a>
   </p>
 </div>
 
